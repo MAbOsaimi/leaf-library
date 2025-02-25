@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  background-color: #2e4756;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.header {
+  /* text-align: center; */
+}
+
+.logo {
+  font-size: 170px;
+  color: #dfffd2;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.actions {
+  display: flex;
+  /* justify-content: center; */
+  gap: 30px;
+}
+
+.btn {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 126px;
+  height: 45px;
+  background-color: #3c7a89;
+  border-radius: 32px;
+  border-color: transparent;
+  box-shadow: 2px 2px black;
+}
+
+.btn:is(:hover, :focus) {
+  cursor: pointer;
+  transform: translateX(2px) translateY(2px);
+}
+
+.books-container {
+  width: 90%;
+  height: 620px;
+  border-radius: 32px;
+  background-color: #bdd6be;
+}
