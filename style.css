@@ -2,46 +2,64 @@ body {
   display: flex;
   background-color: #2e4756;
   flex-direction: column;
-  gap: 50px;
+  gap: 3.5rem;
   align-items: center;
 }
 
 .header {
-  /* text-align: center; */
+  display: flex;
+  align-items: center;
 }
 
+.icon {
+  width: 7rem;
+}
 .logo {
-  font-size: 170px;
+  font-size: 11rem;
   color: #dfffd2;
   font-family: "Times New Roman", Times, serif;
 }
 
 .actions {
   display: flex;
-  /* justify-content: center; */
-  gap: 30px;
+  gap: 2rem;
 }
 
 .btn {
   color: white;
   font-size: 1rem;
   font-weight: bold;
-  width: 126px;
-  height: 45px;
+  width: 8rem;
+  height: 3rem;
   background-color: #3c7a89;
-  border-radius: 32px;
+  border-radius: 2rem;
   border-color: transparent;
-  box-shadow: 2px 2px black;
+  box-shadow: 0.125rem 0.125rem black;
 }
 
-.btn:is(:hover, :focus) {
+.btn:hover {
   cursor: pointer;
-  transform: translateX(2px) translateY(2px);
+  transform: translateX(0.1rem) translateY(0.1rem);
+}
+
+.btn:active {
+  transform: translateX(0.2rem) translateY(0.2rem);
 }
 
 .books-container {
-  width: 90%;
-  height: 620px;
-  border-radius: 32px;
+  width: 80%;
+  height: 25rem;
+
+  border-radius: 2rem;
   background-color: #bdd6be;
+}
+
+@media screen and (max-width: 375px) {
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  .logo {
+    font-size: 4.5rem;
+  }
 }
