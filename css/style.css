@@ -14,6 +14,7 @@ body {
 .icon {
   width: 7rem;
 }
+
 .logo {
   font-size: 11rem;
   color: #dfffd2;
@@ -52,6 +53,34 @@ body {
 
   border-radius: 2rem;
   background-color: #bdd6be;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  height: 13rem;
+  background-image: url("../images/closed-book.svg");
+  background-repeat: no-repeat;
+  background-color: gray;
+  background-position: center;
+  background-size: 95% 95%;
+}
+
+.book-meta-container {
+  width: 100%;
+  height: 6.5rem;
+  margin-top: auto;
+  background-color: rgba(185, 217, 216, 0.8);
+}
+
+.book-header {
+  text-align: center;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 375px) {
