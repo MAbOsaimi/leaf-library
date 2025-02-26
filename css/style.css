@@ -1,8 +1,30 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: italic;
+}
+
+:root {
+  --font-primary: "Roboto", Arial, Helvetica, sans-serif;
+}
+
 body {
   display: flex;
   background-color: #2e4756;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -18,7 +40,7 @@ body {
 .logo {
   font-size: 11rem;
   color: #dfffd2;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-primary);
 }
 
 .actions {
@@ -28,6 +50,7 @@ body {
 
 .btn {
   color: white;
+  font-family: var(--font-primary);
   font-size: 1rem;
   font-weight: bold;
   width: 8rem;
@@ -48,39 +71,149 @@ body {
 }
 
 .books-container {
+  display: flex;
   width: 80%;
   height: 25rem;
-
+  padding-top: 1rem;
   border-radius: 2rem;
-  background-color: #bdd6be;
+  background-color: #c2c9b0;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  overflow: scroll;
 }
 
 .book-card {
   display: flex;
   flex-direction: column;
   width: 13rem;
-  height: 13rem;
-  background-image: url("../images/closed-book.svg");
-  background-repeat: no-repeat;
-  background-color: gray;
-  background-position: center;
-  background-size: 95% 95%;
+  height: 14rem;
+  background-color: rgba(165, 253, 206, 0.5);
+  border: solid;
+  border-radius: 16px 16px 0 0;
+}
+
+.book-cover {
+  max-height: 8rem;
+  padding: 0.5rem 0;
 }
 
 .book-meta-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   height: 6.5rem;
   margin-top: auto;
-  background-color: rgba(185, 217, 216, 0.8);
+  font-family: var(--font-primary);
+  background-color: #e1fcff;
+  border-top: solid;
 }
 
 .book-header {
   text-align: center;
 }
 
+.book-header .book-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.book-header .book-author {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
 .book-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-group input {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  background-color: #d9d9d9;
+  border-radius: 0.5rem;
+  border: none;
+  max-width: 80%;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  border-bottom: ridge 0.125rem black;
+}
+
+.modal-header h2 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal-close-btn {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  font-size: 1.25rem;
+  font-weight: 900;
+  border-radius: 50%;
+  border-width: 0.2rem;
+  border-style: solid;
+  margin-left: auto;
+}
+.modal-close-btn:hover {
+  cursor: pointer;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+input[type="file"] {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+input[type="file"]:hover {
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #3c7a89;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+input[type="file"]::file-selector-button:is(:focus, :hover) {
+  cursor: pointer;
+  background-color: #2e4756;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  grid-column: span 2;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 375px) {
